@@ -128,7 +128,8 @@ def get_next_board(Board):
                 nextBoard[r - 1][c - 1] = 0
             elif numNeighbours == 3 & paddedBoard[r][c] == 0:
                 nextBoard[r - 1][c - 1] = 1
-
+            elif numNeighbours  >= 2 & numNeighbours <= 3 & paddedBoard[r][c] == 1:
+                nextBoard[r - 1][c - 1] = 1
             # ... ... ... ... ...
             # ... Game Logic  ...
             # ... ... ... ... ...
