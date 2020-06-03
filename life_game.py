@@ -39,10 +39,12 @@ def check_neighbours(r, c, board):
     """
     NeighboursSum = 0
 
-    for x in range(r - 1, r + 1):
-        for y in range(c - 1, c + 1):
-            NeighboursSum = NeighboursSum * board[x][y]
-
+    for x in range(r - 1, r + 2):
+        for y in range(c - 1, c + 2):
+            if (x==r) & (y==c):
+                pass
+            else:
+                NeighboursSum = NeighboursSum + board[x][y]
     return NeighboursSum
 
 
@@ -68,7 +70,11 @@ def init_board(rows, columns, method="random"):
     """
     if method == "random":
         board = np.random.random_integers(2, size=(rows, columns)) - 1
+    if method == "read":
+        pass
     return board
+
+
 
 
 def pad_board(board):
@@ -120,14 +126,13 @@ def get_next_board(Board):
     nextBoard = np.zeros((rows, cols), dtype=int)
 
     for r in range(1, dims[0] - 1):
-        for c in range(1, dims[1] - 1):
+        for c in range(1, dims[1]- 1):
             numNeighbours = check_neighbours(r, c, paddedBoard)
-            if numNeighbours == 3 & paddedBoard[r][c] == 0:
+            if (numNeighbours == 3) & (paddedBoard[r][c] == 0):
                 nextBoard[r - 1][c - 1] = 1
-            elif ((numNeighbours  == 2) | (numNeighbours == 3)) & (paddedBoard[r][c] == 1):
+            if ((numNeighbours  == 2) | (numNeighbours == 3)) & (paddedBoard[r][c] == 1):
                 nextBoard[r - 1][c - 1] = 1
             # ... ... ... ... ...
             # ... Game Logic  ...
             # ... ... ... ... ...
-
     return nextBoard
