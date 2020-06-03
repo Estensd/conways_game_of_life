@@ -1,7 +1,7 @@
 import numpy as np
 from life_game import *
 
-print('test initialized')
+print('test initialized\n')
 def test_check_neighbours():
     #zero is zero
     a = np.array([[0, 0, 0],
