@@ -89,7 +89,6 @@ def pad_board(board):
         None
     """
     board = np.pad(board,((1,1),(1,1)),'constant',constant_values=(0,0))
-    print(board)
     return board
 
 
