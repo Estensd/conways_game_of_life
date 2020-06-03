@@ -124,7 +124,7 @@ def get_next_board(Board):
             numNeighbours = check_neighbours(r, c, paddedBoard)
             if numNeighbours == 3 & paddedBoard[r][c] == 0:
                 nextBoard[r - 1][c - 1] = 1
-            elif ()(numNeighbours  == 2) | (numNeighbours == 3)) & (paddedBoard[r][c] == 1):
+            elif ((numNeighbours  == 2) | (numNeighbours == 3)) & (paddedBoard[r][c] == 1):
                 nextBoard[r - 1][c - 1] = 1
             # ... ... ... ... ...
             # ... Game Logic  ...
