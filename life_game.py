@@ -122,13 +122,13 @@ def get_next_board(Board):
     for r in range(1, dims[0] - 1):
         for c in range(1, dims[1] - 1):
             numNeighbours = check_neighbours(r, c, paddedBoard)
-            if numNeighbours < 2 & paddedBoard[r][c] == 1:
+            if numNeighbours < 2 and paddedBoard[r][c] == 1:
                 nextBoard[r - 1][c - 1] = 0
-            elif numNeighbours > 3 & paddedBoard[r][c] == 1:
+            elif numNeighbours > 3 and paddedBoard[r][c] == 1:
                 nextBoard[r - 1][c - 1] = 0
-            elif numNeighbours == 3 & paddedBoard[r][c] == 0:
+            elif numNeighbours == 3 and paddedBoard[r][c] == 0:
                 nextBoard[r - 1][c - 1] = 1
-            elif numNeighbours  >= 2 & numNeighbours <= 3 & paddedBoard[r][c] == 1:
+            elif numNeighbours  >= 2 and numNeighbours <= 3 and paddedBoard[r][c] == 1:
                 nextBoard[r - 1][c - 1] = 1
             # ... ... ... ... ...
             # ... Game Logic  ...
