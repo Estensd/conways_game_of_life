@@ -2,7 +2,6 @@ import numpy as np
 from life_game import *
 
 
-
 def test_check_neighbours():
     #zero is zero
     a = np.array([[0, 0, 0],
@@ -95,6 +94,7 @@ def test_read_board():
                            [0, 1, 1, 0],
                            [0, 0, 0, 0]])
     np.array_equal(board, true_board)
+
 
 print('test initialized\n')
 test_check_neighbours()
