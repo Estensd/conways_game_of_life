@@ -88,7 +88,7 @@ def pad_board(board):
     Examples:
         None
     """
-    board = np.pad(board,((1,1),(1,1)),'constant',constant_values=(0,0))
+    board = np.pad(board, ((1, 1), (1, 1)), 'constant', constant_values=(0, 0))
     return board
 
 
@@ -123,12 +123,11 @@ def get_next_board(Board):
         for c in range(1, dims[1] - 1):
             numNeighbours = check_neighbours(r, c, paddedBoard)
             if numNeighbours < 2 & paddedBoard[r][c] == 1:
-                nextBoard[r-1][c-1] = 0
+                nextBoard[r - 1][c - 1] = 0
             elif numNeighbours > 3 & paddedBoard[r][c] == 1:
-                nextBoard[r-1][c-1] = 0
+                nextBoard[r - 1][c - 1] = 0
             elif numNeighbours == 3 & paddedBoard[r][c] == 0:
-                nextBoard[r-1][c-1] = 1
-
+                nextBoard[r - 1][c - 1] = 1
 
             # ... ... ... ... ...
             # ... Game Logic  ...
